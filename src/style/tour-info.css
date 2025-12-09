@@ -43,20 +43,3 @@
     float: left;
     margin-left: 20px;
 }
-.fa-star {
-    color: darkgray;
-    font-size: larger;
-}
-.fa-star.gold, label.fa-star {
-    color: gold;
-}
-label.fa-star.hidden {
-    display: none;
-}
-input[type=radio]:checked + label.fa-star ~ label.fa-star {
-    color: lightgray;
-}
-input[type=radio] {
-    position: fixed;
-    opacity: 0;
-}
