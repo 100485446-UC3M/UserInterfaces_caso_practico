@@ -1,0 +1,126 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    gap: 10px;
+    padding: 0px 5% 0px 7%; ;
+}
+
+.left-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.left-container h2 {
+    font-family:  "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: bold;
+
+}
+.left-container p {
+    font-family:  "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+    font-size: 1.5rem;
+}
+
+.destinos-destacados {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/descubre_destinos.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;               
+    padding: 20px;
+}
+
+.Elementos{
+    background: rgba(0,0,0,0.5); /* fondo semitransparente */
+    display: flex;             
+    flex-direction: column;
+    max-width: 80%;                
+    border-radius: 8px; 
+    padding: 30px;
+}
+
+.Títulos {
+    font-size: 1.6rem;
+    padding: 5px;
+}
+.Botón-Búsqueda {
+    display: inline-block;  /* Se ajusta al contenido */
+    align-self: flex-start; /* Evita que flex lo estire al ancho completo */
+    padding: 20px 20px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Trip Sans VF", "Trip Sans", "Arial";
+}
+
+.bottom-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.Tours{
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/Tours.JPG');
+    background-size: cover;
+    background-position: center;
+    color: white;               
+    padding: 15px;
+    align-items: center;
+}
+
+.Descubre-por-tu-Cuenta{
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/desc.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;               
+    padding: 15px;
+    align-items: center;
+}
+
+.Itinerarios{
+    display: flex;             
+    padding: 15px 20px;
+    font-size: 2rem;
+    gap: 150px;
+}
+
+.Itinerarios .Botón-Búsqueda {
+    display: flex;
+    align-self: center;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column; /* elementos uno debajo del otro */
+    align-items: center;
+    gap: 10px; 
+}
+.perfil-img {
+    width: 150px;          /* tamaño de la foto */
+    height: 150px;
+    border-radius: 50%;   
+    border: 2px solid #ccc; 
+}
+
+.perfil-links {
+    display: flex;
+    gap: 20px;
+}
+
+.perfil-link {
+    text-decoration: none;
+    color: #3d00a0;
+    font-size: 1.2rem;
+}
+
+.perfil-link:hover {
+    text-decoration: underline;
+}
