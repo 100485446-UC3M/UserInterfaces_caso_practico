@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style/signup.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <script src="scripts/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div>
+            <a href="inicio.html"><img src="images/logo.jpg" alt="Our Logo" class="logo"></a>
+        </div>
+        <div class="menu_and_extras">
+            <nav class="menu">   <!-- 'Navegación' -->
+                    <a href="#">Nuestros Tours</a>
+                    <a href="#">Descubre por tu Cuenta</a>
+                    <a href="#">Itinerarios</a>
+                    <a href="#">Destinos Destacados</a>
+                    <a href="#">Completa tu Viaje</a>
+            </nav>
+            <div class="iconos">
+                <div class="icono">
+                    <a href="#"><img src="images/help.png" alt="Ayuda"></a>
+                    <p>Ayuda</p>
+                </div>
+                <div class="icono">
+                     <a href="#"><img src="images/ingles.png" alt="Ingles"></a>
+                    <p>EN</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="signup">
+        <h1>Registro de Usuario</h1>
+        <div class="register-container">
+            <div class="login-box">
+                <form class="form-container" id="register-form" action="#" method="get">
+                    
+
+                    <label for="Usuario">Usuario:</label>
+                    <input type="text" id="Usuario" name="Usuario" required>
+                    
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit" id="submitBtn" class="btnSubmit" >Continuar</button>
+                    <p>¿No tienes una cuenta?</p>
+                    <a href="signup.html" class="login-link">Regístrate</a>
+                </form>
+                <p id="mensaje" class="mensaje"></p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Descubriendo el Mundo. Todos los derechos reservados.</p>
+
+                <nav class="footer-links">
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Ayuda</a>
+                </nav>
+
+                <div class="social-icons">
+                    <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/tiktok-icon.png" alt="TikTok"></a>
+                    <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                </div>
+
+                <form class="newsletter">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+
+        </footer>
+    </body>
+</html>
