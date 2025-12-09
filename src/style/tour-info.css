@@ -1,0 +1,62 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.main-left, .main-right {
+    padding: 30px;
+}
+.tour-image {
+    display: block;
+    width: 80%;
+}
+.fa-star.gold {
+    color: gold;
+}
+.comments-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.comment, .comment-input {
+    padding: 20px;
+    max-width: 100%;
+    border: 2px solid black;
+}
+.comment { 
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+.comment img {
+    width: 20%;
+}
+.top-row {
+    display: flex;
+}
+.top-row p {
+    justify-self: right;
+    margin-left: auto;
+}
+.bottom-row img {
+    display: block;
+    float: left;
+}
+.bottom-row p {
+    float: left;
+    margin-left: 20px;
+}
+.fa-star {
+    color: darkgray;
+    font-size: larger;
+}
+.fa-star.gold, label.fa-star {
+    color: gold;
+}
+label.fa-star.hidden {
+    display: none;
+}
+input[type=radio]:checked + label.fa-star ~ label.fa-star {
+    color: lightgray;
+}
+input[type=radio] {
+    position: fixed;
+    opacity: 0;
+}
