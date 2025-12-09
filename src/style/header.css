@@ -1,4 +1,3 @@
-
 .logo {    
     display: block;
     margin: 20px auto;    
@@ -6,14 +5,22 @@
 
 }
 
+.menu_and_extras {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centra el menú */
+    margin-bottom: 30px;
+    gap:10px;            
+}
+
 .menu {
     display: flex;
     justify-content: center;    
     gap: 40px;                    
-    background-color: #ffffe6;    
+    background-color: #f8f4e8;    
     padding: 20px 10px;              
     width: 60%;                   /* ancho del rectángulo */
-    margin: 0 auto;               /* Centrado horizontal */
     border-radius: 10px;          
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
@@ -23,4 +30,26 @@
     text-decoration: none;
     color: #333;
     font-weight: bold;
+}
+
+.iconos {
+    display: flex;
+    gap: 30px;      /* espacio entre imágenes */
+}
+
+.icono {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* nombre debajo de la imagen */
+}
+
+.icono img {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.icono p {
+    margin-top: 5px;
+    font-size: 0.9rem;
 }
