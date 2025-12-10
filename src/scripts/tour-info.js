@@ -1,21 +1,3 @@
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION mirar el comentario de abajo
-// ATENCION descomentarlo cuando sea apropiado
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-
 function updateStars(tourComments){
     const stars = $(".main-container .stars");
     stars.empty();
@@ -69,13 +51,13 @@ $(function(){
     const commentDOM = $(".comment").clone();
     // se espera un tour(indice del array de tours), y un username (string, opcional)
     // si se pasa un username se significa que está loggeado
-    const params = new URLSearchParams(decodeURIComponent(window.location.search))
+    const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const username = params.get("username");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
     $.getJSON("data/tours.json", function(data){
         //todo lo que necesite tourInfo debe estar dentro de esta funcion
         const tourInfo = data[params.get("tour")];
-        const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}")
+        const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");
         const tourComments = allTours[tourInfo["name"]] ?? [];
 
         updateCommentList(tourComments, commentDOM, username);

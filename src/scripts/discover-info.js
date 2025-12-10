@@ -69,7 +69,7 @@ $(function(){
     const commentDOM = $(".comment").clone();
     // se espera un discover(indice del array de tours), y un username (string, opcional)
     // si se pasa un username se significa que está loggeado
-    const params = new URLSearchParams(decodeURIComponent(window.location.search))
+    const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const username = params.get("username");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
     $.getJSON("data/discover.json", function(data){
