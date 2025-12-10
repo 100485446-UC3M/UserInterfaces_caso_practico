@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang = "es">
 
-
 <head>
     <script src="scripts/jquery-3.7.1.min.js"></script>
     <title>Unbounded</title>
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="style/distribución_base.css">
     <link rel="stylesheet" href="style/itinerarios.css">
     <link rel="stylesheet" href="style/stars.css">
-    <link rel="stylesheet" href="style/distribución_base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta charset="UTF-8">
@@ -26,7 +24,7 @@
             <nav class="menu">   <!-- 'Navegación' -->
                     <a href="tours.html">Nuestros Tours</a>
                     <a href="#">Descubre por tu Cuenta</a>
-                    <a href="#">Itinerarios</a>
+                    <a href="itinerarios.html">Itinerarios</a>
                     <a href="#">Destinos Destacados</a>
                     <a href="completa_tu_viaje.html">Completa tu Viaje</a>
             </nav>
@@ -141,11 +139,44 @@
                             </div>
                             <h3> 125€</h3>
                             <button type="button" class="añadir-button">Añadir al Itinerario</button>
-
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
+
+            <div class="itinerarios-populares">
+                <h2>Itinerarios Populares</h2>
+                <form action="/buscar" method="get" class="Buscador">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar...">
+                        <button class="btn-filters">⚙️</button>
+                    </div>
+                </form>
+                <div class="adjustable">
+                    <div class="itinerarios-grid">
+                        <div class="category-card">
+                            <a href="itinerario-info.html"><img src="images/itinerario1.jpg" alt="Itineario1"></a>
+                            <h3>Visitando la Costa Amalfitana <br> 5 Días</h3>
+                        </div>
+                        <div class="category-card">
+                            <a href="itinerario-info.html"><img src="images/itinerario2.jpeg" alt="Itinerario2"></a>
+                            <h3>Conoce Andalucía <br> 7 Días</h3>
+                        </div>
+                        <div class="category-card">
+                            <a href="itinerario-info.html"><img src="images/itinerario3.jpg" alt="Itinerario3"></a>
+                            <h3>Viviendo Colombia <br> 4 Días</h3>
+                        </div>
+                        <div class="category-card">
+                            <a href="itinerario-info.html"><img src="images/itinerario4.webp" alt="Itinerario4"></a>
+                            <h3>Descubriendo Bavaria <br> 6 Días</h3>
+                        </div>
+                            <div class="category-card">
+                            <a href="itinerario-info.html"><img src="images/itinerario5.jpeg" alt="Itinerario5"></a>
+                            <h3>Andando por Francia <br> 6 Días</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>   
         </div>
 
         <div class="perfil-container">
