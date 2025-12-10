@@ -1,3 +1,10 @@
+.super-container {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    gap: 10px;
+    padding: 0px 5% 0px 7%; ;
+}
+
 .main-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -50,4 +57,34 @@
 .bottom-row p {
     float: left;
     margin-left: 20px;
+}
+
+
+.perfil-container {
+    display: flex;
+    flex-direction: column; /* elementos uno debajo del otro */
+    align-items: center;
+    gap: 10px; 
+}
+.perfil-img {
+    width: 150px;          /* tamaño de la foto */
+    height: 150px;
+    border-radius: 50%;   
+    border: 2px solid #ccc; 
+}
+
+.perfil-links {
+    display: flex;
+    gap: 20px;
+    font-family: "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+}
+
+.perfil-link {
+    text-decoration: none;
+    color: #3d00a0;
+    font-size: 1.2rem;
+}
+
+.perfil-link:hover {
+    text-decoration: underline;
 }
