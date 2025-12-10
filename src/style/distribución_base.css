@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 6fr 1fr;
     gap: 10px;
-    padding: 0px 5% 0px 7%; ;
+    padding: 0px 5% 20px 7%; ;
 }
 
 .perfil-container {

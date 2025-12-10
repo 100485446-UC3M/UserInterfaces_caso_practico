@@ -32,6 +32,13 @@
     box-shadow: none; /* override para que no aparezca */
 }
 
+.properties {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family:  "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+}
 
 .login-box .mensaje {
     display:none;
