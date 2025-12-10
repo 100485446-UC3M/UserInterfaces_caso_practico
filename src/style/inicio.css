@@ -113,6 +113,7 @@
 .perfil-links {
     display: flex;
     gap: 20px;
+    font-family: "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
 }
 
 .perfil-link {

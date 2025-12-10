@@ -3,10 +3,23 @@
     display: grid;
     grid-template-columns: 6fr 1fr;
     gap: 10px;
-    padding: 0px 5% 0px 7%; ;
+    padding: 0px 5% 15px 7%; ;
 }
- 
- .bannner {
+
+.left-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 10px;
+}
+
+.left-container h2 {
+    font-family:"system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";     
+    font-size: 2rem;
+    padding: 0px 0px;
+    margin-top: 10px;
+}
+
+ .banner {
     background-image: url('../images/banner.jpg'); 
     background-size: cover;      /* cubre todo el contenedor */
     background-position: center; 
@@ -19,16 +32,147 @@
     border-bottom: 2px solid #c9c6c6;     
 }
 
-.banner h2 {
+.banner h2{
     font-size: 2rem;
     text-align: center;
-    padding: 0.1px 10px;
+    padding: 10px 10px;
     color: white;               
     font-weight: bold;
+    font-family: "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
     background: rgba(126, 118, 118, 0.5); /* fondo semitransparente */
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 90%;                /* tamaño del buscador */
+    height: 40px;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    padding: 5px 12px;
+    transition: border 0.3s ease;
+}
 
+.search-bar input {
+    flex: 1;                     /* ocupa todo el espacio disponible */
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.search-bar:hover {
+    border-color: #2d4232;
+}
+
+.category-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden; /* recorta cualquier contenido que sobresalga */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.20);
+    position: relative;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.category-card h3 {
+    position: absolute;
+    padding: 8px 16px;
+    left:50%;
+    transform: translate(-50%);
+    color: white;
+    font-size: 1.5rem;
+    font-family:"Trip Sans VF","Trip Sans", "Arial", "sans-serif" ;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.45);   /* sombreado detrás del texto */
+    border-radius: 8px;
+}
+
+.load-more-container {
+    display: flex;
+    justify-content: right; 
+}
+
+.load-more-btn {
+    background-color: #6c5a25;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #2d4232;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra horizontalmente */
+}
+
+.experience h3 {
+    font-family:  "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+    font-size: 1.3rem;
+    margin: 5px 0 5px 0;
+    text-align: center;
+}
+.experience-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden; /* recorta cualquier contenido que sobresalga */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.20); /* sombra sutil */
+}
+
+.experience-card img {
+    width: 100%;
+    height: 2fr;         /* ocupa 70% de la tarjeta */
+    object-fit: cover;   /* recorta la imagen si no encaja */
+    aspect-ratio: 3 / 2;
+}
+
+.experience-card h3 {
+    margin: 5px 20px;
+    width: fit-content;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.stars {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 5px; /* Espacio entre estrellas */
+}
 
 .right-container {
     display: flex;
@@ -46,6 +190,7 @@
 .perfil-links {
     display: flex;
     gap: 20px;
+    font-family:  "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
 }
 
 .perfil-link {

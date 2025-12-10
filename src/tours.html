@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style/tours.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/stars.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
 
 </head>
@@ -37,12 +40,118 @@
     </header>
 
     <div class="main-container">
-    
-        <div class="bannner">
-            <h2>Descubramos el Mundo Juntos</h2>
+        <div class="left-container">
+            <div class="banner">
+                <h2> Supera tus límites con nuestros Tours</h2>
+            </div>
+
+            <form action="/buscar" method="get" class="Buscador">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                    <button class="btn-filters">⚙️</button>
+                </div>
+            </form>
+
+            <h2>Categorías</h2>
+            <div class="experience-grid">
+                <div class="category-card">
+                    <a href="#"><img src="images/adventure.cms" alt="Aventura"></a>
+                    <h3>Aventura</h3>
+                </div>
+                <div class="category-card">
+                    <a href="#"><img src="images/cultural.jpeg" alt="Cultural"></a>
+                    <h3>Cultural</h3>
+                </div>
+                <div class="category-card">
+                    <a href="#"><img src="images/relaxation.jpg" alt="Relajación"></a>
+                    <h3>Relajación</h3>
+                </div>
+                <div class="category-card">
+                    <a href="#"><img src="images/gastronomy.jpg" alt="Gastronomía"></a>
+                    <h3>Gastronomía</h3>
+                </div>
+            </div>
+
+            <div class="load-more-container">
+                <button class="load-more-btn">Ver más</button>
+            </div>
+
+            <h2>Explorar Tours</h2>
+            <div class="experience-grid">
+                <div class="experience">
+                    <div class="experience-card">
+                        <a href="tour-info.html"><img src="images/experience1.jpeg" alt="Experiencia 1"></a>
+                        <h3>Conoce Madrid</h3>
+                    </div>
+                    <div>
+                        <p class="stars">
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        </p>
+                    </div>
+                    <h3> 100€</h3>
+                </div>
+
+                <div class="experience">
+                    <div class="experience-card">
+                        <a href="tour-info.html"><img src="images/experience2.jpg" alt="Experiencia 2"></a>
+                        <h3>Visita Barcelona</h3>    
+                    </div>
+                    <div>
+                        <p class="stars">
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        </p>
+                    </div>
+                    <h3> 200€</h3>
+                </div>
+
+                <div class="experience">
+                    <div class="experience-card">
+                        <a href="tour-info.html"><img src="images/experience3.webp" alt="Experiencia 3"></a>
+                        <h3>Explora Sevilla</h3>
+                    </div>
+                    <div>
+                        <p class="stars">
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star"></span>
+                        </p>
+                    </div>
+                    <h3> 125€</h3>
+                </div>
+
+                <div class="experience">
+                    <div class="experience-card">
+                        <a href="tour-info.html"><img src="images/experience4.jpg" alt="Experiencia 4"></a>
+                        <h3>Descubre Valencia</h3>
+                    </div>
+                    <div>
+                        <p class="stars">
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star gold"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        </p>
+                    </div>
+                    <h3> 50€</h3>
+                </div>
+            </div>
+            <div class="load-more-container">
+                <button class="load-more-btn">Ver más</button>
+            </div>
         </div>
 
-         <div class="right-container">
+        <div class="right-container">
             <img src="images/vacío.jpg" alt="Foto de perfil" class="perfil-img">
             <div class ="perfil-links">
                 <a href="signup.html" class="perfil-link">Sign Up</a>
@@ -52,28 +161,32 @@
         
     </div>
 
-    <footer>
+   <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Descubriendo el Mundo. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Unbounded. Todos los derechos reservados.</p>
 
             <nav class="footer-links">
-                <a href="#">Sobre nosotros</a>
-                <a href="#">Política de privacidad</a>
-                <a href="#">Ayuda</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Aceptación de Cookies</a>
             </nav>
 
             <div class="social-icons">
-                <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
-                <a href="#"><img src="images/tiktok-icon.png" alt="TikTok"></a>
-                <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                <h5>Síguenos</h5>
+                <div class="icono">
+                    <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <p>Instagram</p>
+                </div>
+                <div class="icono">
+                    <a href="#"><img src="images/tiktok-icon.png" alt="TikTok"></a>
+                    <p>Tik Tok</p>
+                </div>
+                <div class="icono">
+                    <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                    <p>Youtube</p>
+                </div>
             </div>
-
-            <form class="newsletter">
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <button type="submit">Suscribirse</button>
-            </form>
         </div>
 
     </footer>
 </body>
-</html>

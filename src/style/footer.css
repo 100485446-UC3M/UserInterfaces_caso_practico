@@ -19,6 +19,7 @@
 .footer-links {
     display: flex;
     gap: 70px;
+    font-family: "Trip Sans VF","Trip Sans", "Arial", "sans-serif" ;
 }
 
 .footer-links a {
