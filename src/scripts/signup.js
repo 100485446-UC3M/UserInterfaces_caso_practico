@@ -12,6 +12,7 @@ $(function(){
         const email = $("#email").val().trim();
         const emailconfirm = $("#emailconfirm").val().trim();
         const birthday = $("#birthday").val().trim();
+        const city = $("#Ciudad").val().trim();
         const login = $("#login").val().trim();
         const password = $("#password").val().trim();
         const foto = $("#foto").prop("files")[0];
@@ -43,6 +44,11 @@ $(function(){
 
         if (!birthday || new Date(birthday) > new Date()){ //La fecha no puede ser posterior al día de hoy
             alert("Fecha de nacimiento no válida.");
+            return false;
+        }
+
+        if(!city){
+            alert("Debe ingresar una ciudad");
             return false;
         }
 
@@ -82,6 +88,7 @@ $(function(){
                     "apellidos": apellidos,
                     "email": email,
                     "birthday": birthday,
+                    "city": city,
                     "password": password,
                     "image": fr.result
                 }));
