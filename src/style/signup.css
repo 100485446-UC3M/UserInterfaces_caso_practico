@@ -79,3 +79,7 @@
     font-weight: bold;
     font-family: "Trip Sans VF", "Trip Sans", "Arial";
 }
+
+.login-link:hover:not(:disabled) {
+    background-color: #00796b;
+}

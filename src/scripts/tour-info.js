@@ -86,6 +86,11 @@ $(function(){
         $(".price").text(tourInfo["price"] + "€");
         $(".description").text(tourInfo["description"]);
 
+        // Botón comprar → redirige a una página
+        $(".buy-button").on("click", function() {
+        window.location.href = `compra.html?tour=${tourInfo["name"]}`;
+        });
+
         if(!username) {
             $('.comment-input').remove();
             return;

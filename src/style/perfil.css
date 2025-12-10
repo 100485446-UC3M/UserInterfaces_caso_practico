@@ -1,0 +1,104 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 0px 5% 50px 7%; ;
+    font-family: "Trip Sans VF", "Trip Sans", "Arial";
+}
+
+.main-container h2 {
+    font-size: 2rem;
+    font-family: "Trip Sans VF", "Trip Sans", "Arial";
+}
+
+
+.perfil-container {
+    padding: 20px;
+    border-radius: 8px;
+    border:1px solid #2d4232;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.user-icon {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.middle-container {
+    display: flex;
+    flex-direction: column; 
+    
+    gap: 10px; 
+}
+
+.contenedor-superior{
+    border-radius: 8px;
+    border: 2px solid #2d4232;
+    padding: 20px;
+}
+
+.insignias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding:20px;
+}
+
+.insignia{
+    height: 100px;
+    width: 100px;
+}
+
+.puntos{
+    border: 2px solid #2d4232;
+    border-radius: 8px;
+    padding: 20px;
+}
+.puntos-valor{
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: monospace;
+    color: #2d4232;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.actividad-reciente{
+    border: 2px solid #2d4232;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;    /* muestra scroll solo en Y */
+    max-height: 800px
+}
+
+.comment { 
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    border: 1px solid #2d4232;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.comment img {
+    width: 20%;
+}
+.top-row {
+    display: flex;
+}
+.top-row p {
+    justify-self: right;
+    margin-left: auto;
+}
+.bottom-row img {
+    display: block;
+    float: left;
+}
+.bottom-row p {
+    float: left;
+    margin-left: 20px;
+}
