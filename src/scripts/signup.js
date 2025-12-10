@@ -84,8 +84,8 @@ $(function(){
         const fr = new FileReader();
         fr.addEventListener('load', () => {
                 localStorage.setItem(login, JSON.stringify({
-                    "nombre": nombre,
-                    "apellidos": apellidos,
+                    "name": nombre,
+                    "surnames": apellidos,
                     "email": email,
                     "birthday": birthday,
                     "city": city,
