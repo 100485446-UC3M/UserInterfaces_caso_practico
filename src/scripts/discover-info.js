@@ -16,15 +16,15 @@
 // ATENCION
 // ATENCION
 
-function updateStars(tourComments){
+function updateStars(discoverComments){
     const stars = $(".main-container .stars");
     stars.empty();
     let rating = 0;
-    for (var i = 0; i < tourComments.length; i++){
-        rating = rating + tourComments[i]["rating"];
+    for (var i = 0; i < discoverComments.length; i++){
+        rating = rating + discoverComments[i]["rating"];
     }
     if (rating !== 0){
-        rating = rating / tourComments.length;
+        rating = rating / discoverComments.length;
         rating = Math.round(rating);
     }
     
@@ -36,33 +36,33 @@ function updateStars(tourComments){
     }
 }
 
-function updateCommentList(tourComments, commentDOM, isLoggedIn) {
+function updateCommentList(discoverComments, commentDOM, isLoggedIn) {
     const comments = $(".comments-container");
     comments.find(".comment").remove();
-    for (var i = 0; i < tourComments.length; i++){
+    for (var i = 0; i < discoverComments.length; i++){
         const comm = commentDOM.clone();
         const topRow = comm.children(".top-row");
-        const username = tourComments[i]["username"];
+        const username = discoverComments[i]["username"];
         topRow.children(".username").text(username);
         const stars = topRow.children(".comment .stars");
         stars.empty();
-        const rating = tourComments[i]["rating"];
+        const rating = discoverComments[i]["rating"];
         for (var j = 0; j < rating; j++){
             stars.append('<span class="fa fa-star gold"></span> ');
         }
         for (var j = rating; j < 5; j++){
             stars.append('<span class="fa fa-star"></span> ');
         }
-        topRow.children(".date").text(tourComments[i]["date"]);
+        topRow.children(".date").text(discoverComments[i]["date"]);
         const bottomRow = comm.children(".bottom-row");
         const userInfo = JSON.parse(localStorage.getItem(username));
         //comentado hasta que se implementen usuarios
         //bottomRow.children("img").attr("src", userInfo["image"]);
-        bottomRow.children("p").text(tourComments[i]["text"]);
+        bottomRow.children("p").text(discoverComments[i]["text"]);
         comments.append(comm);
     }
     if(isLoggedIn) comments.append($('.comment-input'));
-    updateStars(tourComments);
+    updateStars(discoverComments);
 }
 
 $(function(){
@@ -73,18 +73,17 @@ $(function(){
     const params = new URLSearchParams(decodeURIComponent(window.location.search))
     const username = params.get("username");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
-    $.getJSON("data/tours.json", function(data){
-        //todo lo que necesite tourInfo debe estar dentro de esta funcion
-        const tourInfo = data[params.get("tour")];
-        const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}")
-        const tourComments = allTours[tourInfo["name"]] ?? [];
+    $.getJSON("data/discover.json", function(data){
+        //todo lo que necesite discoverInfo debe estar dentro de esta funcion
+        const discoverInfo = data[params.get("discover")];
+        const allDiscovers = JSON.parse(localStorage.getItem("discoverComments") ?? "{}")
+        const discoverComments = allDiscovers[discoverInfo["name"]] ?? [];
 
-        updateCommentList(tourComments, commentDOM, username);
+        updateCommentList(discoverComments, commentDOM, username);
 
-        $(".tour-name").text(tourInfo["name"]);
-        $(".tour-image").attr("src", tourInfo["image"]);
-        $(".price").text(tourInfo["price"] + "€");
-        $(".description").text(tourInfo["description"]);
+        $(".tour-name").text(discoverInfo["name"]);
+        $(".tour-image").attr("src", discoverInfo["image"]);
+        $(".description").text(discoverInfo["description"]);
 
         if(!username) {
             $('.comment-input').remove();
@@ -103,16 +102,16 @@ $(function(){
                 return false;
             }
 
-            tourComments.push({
+            discoverComments.push({
                 "username": username,
                 "rating": rating,
                 "text": textInput.val().trim(),
                 "date": new Date().toLocaleDateString()
             });
-            allTours[tourInfo["name"]] = tourComments;
-            localStorage.setItem("tourComments", JSON.stringify(allTours));
+            allDiscovers[discoverInfo["name"]] = discoverComments;
+            localStorage.setItem("discoverComments", JSON.stringify(allDiscovers));
 
-            updateCommentList(tourComments, commentDOM, username);
+            updateCommentList(discoverComments, commentDOM, username);
 
             textInput.val('');
             ratingInput.prop("checked", false);
