@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/itinerarios.css">
+    <link rel="stylesheet" href="style/stars.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <meta charset="UTF-8">
 </head>
 
@@ -40,10 +43,106 @@
 
     <div class="main-container">
         <div class="itinerarios">
-            <div class="Tu-itinerario">
-                <h2>Crea tu Itinerario</h2>
-                
+            <div class="creador-itinerarios">
 
+                <div class="tu-itinerario">
+                    <h2>Crea tu Itinerario</h2>
+                    <label for="Nombre" class="input">Nombre del Itinerario:</label>
+                    <input type="text" id="Nombre" name="Nombre" required>
+                    <div class="labels">
+                        <h2>Día</h2>
+                        <h2>Actividad</h2>
+                    </div>
+                    <div class="Dia-Actividad">
+                        <h3>1</h3>
+                        <div class="Actividad">
+                            <img src="images/actividad1.webp" alt="Actividad Icon" class="actividad-icon">
+                            <div class="Actividad-Detalles">
+                                <h4>Título</h4>
+                                <h5>Tipo de la actividad</h5>
+                                <h5>Precio</h5>
+                                <p class="stars">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+                            </div>
+                            <div class="Actividad-Acciones">
+                                <button type="button" class="eliminar-button">Eliminar</button>
+                                <button type="button" class="expand-button">Más Información</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="añadir-actividades">
+                    <h2>Añadir Jornada</h2>
+                    <form action="/buscar" method="get" class="Buscador">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Buscar...">
+                            <button class="btn-filters">⚙️</button>
+                        </div>
+                    </form>
+                    <h3>Recomendaciones</h3>
+                    <div class="experience-grid">
+                        <div class="experience">
+                            <div class="experience-card">
+                                <a href="tour-info.html"><img src="images/experience1.jpeg" alt="Experiencia 1"></a>
+                                <h3>Conoce Madrid</h3>
+                            </div>
+                            <div>
+                                <p class="stars">
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                </p>
+                            </div>
+                            <h3> 100€</h3>
+                            <button type="button" class="añadir-button">Añadir al Itinerario</button>
+                        </div>
+                        <div class="experience">
+                            <div class="experience-card">
+                                <a href="tour-info.html"><img src="images/experience2.jpg" alt="Experiencia 2"></a>
+                                <h3>Visita Barcelona</h3>    
+                            </div>
+                            <div>
+                                <p class="stars">
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                </p>
+                            </div>
+                            <h3> 200€</h3>
+                            <button type="button" class="añadir-button">Añadir al Itinerario</button>
+
+                        </div>
+
+                        <div class="experience">
+                            <div class="experience-card">
+                                <a href="tour-info.html"><img src="images/experience3.webp" alt="Experiencia 3"></a>
+                                <h3>Explora Sevilla</h3>
+                            </div>
+                            <div>
+                                <p class="stars">
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star gold"></span>
+                                <span class="fa fa-star"></span>
+                                </p>
+                            </div>
+                            <h3> 125€</h3>
+                            <button type="button" class="añadir-button">Añadir al Itinerario</button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
