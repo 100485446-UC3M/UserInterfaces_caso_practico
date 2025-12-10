@@ -109,7 +109,7 @@ $(function(){
                 "date": new Date().toLocaleDateString()
             });
             allDiscovers[discoverInfo["name"]] = discoverComments;
-            localStorage.setItem("tourComments", JSON.stringify(allDiscovers));
+            localStorage.setItem("discoverComments", JSON.stringify(allDiscovers));
 
             updateCommentList(discoverComments, commentDOM, username);
 
