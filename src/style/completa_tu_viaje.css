@@ -1,0 +1,59 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.main-container h2 {
+    font-family: "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+    font-size: 2rem;
+    margin: 20px 0 10px 0;
+}
+
+ .banner {
+    background-image: url('../images/completa.jpg'); 
+    background-size: cover;      /* cubre todo el contenedor */
+    background-position: center; 
+    width: 60%;
+    padding: 20px;               
+    display: flex;               /* para centrar contenido */
+    align-items: center;         
+    justify-content: center;     
+    color: white;               
+    font-size: 1.5rem;          
+    border-bottom: 2px solid #c9c6c6;     
+}
+
+.banner h1{
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px 10px;
+    color: white;               
+    font-weight: bold;
+    font-family: "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: rgba(126, 118, 118, 0.5); /* fondo semitransparente */
+}
+
+
+.recomendaciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;             
+    padding: 15px 20px;
+    font-size: 1.6rem;
+    gap: 50px;
+    align-items: center;
+    font-family: "Trip Sans VF", "Trip Sans", "Arial";
+}
+
+.recomendacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recomendacion img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+
+}
