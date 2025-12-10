@@ -78,14 +78,14 @@
 
 .comment { 
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
     border: 1px solid #2d4232;
     padding:20px;
     border-radius: 10px;
 }
 
 .comment img {
-    width: 20%;
+    width: 40%;
 }
 .top-row {
     display: flex;
