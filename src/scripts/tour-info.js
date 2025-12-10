@@ -56,8 +56,7 @@ function updateCommentList(tourComments, commentDOM, isLoggedIn) {
         topRow.children(".date").text(tourComments[i]["date"]);
         const bottomRow = comm.children(".bottom-row");
         const userInfo = JSON.parse(localStorage.getItem(username));
-        //comentado hasta que se implementen usuarios
-        //bottomRow.children("img").attr("src", userInfo["image"]);
+        bottomRow.children("img").attr("src", userInfo["image"]);
         bottomRow.children("p").text(tourComments[i]["text"]);
         comments.append(comm);
     }

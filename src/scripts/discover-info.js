@@ -56,8 +56,7 @@ function updateCommentList(discoverComments, commentDOM, isLoggedIn) {
         topRow.children(".date").text(discoverComments[i]["date"]);
         const bottomRow = comm.children(".bottom-row");
         const userInfo = JSON.parse(localStorage.getItem(username));
-        //comentado hasta que se implementen usuarios
-        //bottomRow.children("img").attr("src", userInfo["image"]);
+        bottomRow.children("img").attr("src", userInfo["image"]);
         bottomRow.children("p").text(discoverComments[i]["text"]);
         comments.append(comm);
     }
@@ -68,7 +67,7 @@ function updateCommentList(discoverComments, commentDOM, isLoggedIn) {
 $(function(){
     //usamos los DOM en el html por defecto como plantilla
     const commentDOM = $(".comment").clone();
-    // se espera un tour(indice del array de tours), y un username (string, opcional)
+    // se espera un discover(indice del array de tours), y un username (string, opcional)
     // si se pasa un username se significa que está loggeado
     const params = new URLSearchParams(decodeURIComponent(window.location.search))
     const username = params.get("username");
