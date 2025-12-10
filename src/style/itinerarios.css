@@ -5,11 +5,12 @@
     gap: 15px;
 }
 
-.tu-itinerario h2 {
+.itinerarios h2{
     font-family:  "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 }
+
 
 .input {
     font-family:  "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -60,7 +61,7 @@
 .Actividad img{
     width: 150px;
     height: 150px;
-    border-radius: 8px 0 0 8px;
+    border-radius: 8px;
 }
 
 .Actividad-Detalles {
@@ -224,5 +225,51 @@
 }
 .añadir-button:hover {
     background-color: #00796b;
+}
+
+.adjustable {
+    overflow-y: auto;    /* muestra scroll solo en Y */
+    max-height: 880px
+}
+
+.itinerarios-grid {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.category-card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden; /* recorta cualquier contenido que sobresalga */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.50);
+    position: relative;
+    height: 200px;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.category-card h3 {
+    position: absolute;
+    padding: 8px 16px;
+    left:50%;
+    transform: translate(-50%);
+    color: white;
+    font-size: 1.5rem;
+    font-family:"Trip Sans VF","Trip Sans", "Arial", "sans-serif" ;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.45);   /* sombreado detrás del texto */
+    border-radius: 8px;
 }
 
