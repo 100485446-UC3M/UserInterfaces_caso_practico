@@ -1,0 +1,15 @@
+// estructura del json almacenado en 
+// localStorage con los comentarios de los tours
+//
+// no está pensado para usarse, sino para mostrar la estructura
+
+{
+    "Tour name": [
+        {
+            "username": "username",
+            "rating": 5,
+            "text": "Comentario",
+            "date": "10/12/2025"
+        }
+    ]
+}

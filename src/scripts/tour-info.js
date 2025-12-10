@@ -17,7 +17,7 @@
 // ATENCION
 
 function updateStars(tourComments){
-    const stars = $(".stars");
+    const stars = $(".main-container .stars");
     stars.empty();
     let rating = 0;
     for (var i = 0; i < tourComments.length; i++){
@@ -36,7 +36,7 @@ function updateStars(tourComments){
     }
 }
 
-function updateCommentList(tourComments, commentDOM) {
+function updateCommentList(tourComments, commentDOM, isLoggedIn) {
     const comments = $(".comments-container");
     comments.find(".comment").remove();
     for (var i = 0; i < tourComments.length; i++){
@@ -44,7 +44,7 @@ function updateCommentList(tourComments, commentDOM) {
         const topRow = comm.children(".top-row");
         const username = tourComments[i]["username"];
         topRow.children(".username").text(username);
-        const stars = topRow.children(".stars");
+        const stars = topRow.children(".comment .stars");
         stars.empty();
         const rating = tourComments[i]["rating"];
         for (var j = 0; j < rating; j++){
@@ -61,13 +61,15 @@ function updateCommentList(tourComments, commentDOM) {
         bottomRow.children("p").text(tourComments[i]["text"]);
         comments.append(comm);
     }
-    comments.append($('.comment-input'));
+    if(isLoggedIn) comments.append($('.comment-input'));
     updateStars(tourComments);
 }
 
 $(function(){
     //usamos los DOM en el html por defecto como plantilla
     const commentDOM = $(".comment").clone();
+    // se espera un tour(indice del array de tours), y un username (string, opcional)
+    // si se pasa un username se significa que está loggeado
     const params = new URLSearchParams(decodeURIComponent(window.location.search))
     const username = params.get("username");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
@@ -77,12 +79,17 @@ $(function(){
         const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}")
         const tourComments = allTours[tourInfo["name"]] ?? [];
 
-        updateCommentList(tourComments, commentDOM);
+        updateCommentList(tourComments, commentDOM, username);
 
         $(".tour-name").text(tourInfo["name"]);
         $(".tour-image").attr("src", tourInfo["image"]);
         $(".price").text(tourInfo["price"] + "€");
         $(".description").text(tourInfo["description"]);
+
+        if(!username) {
+            $('.comment-input').remove();
+            return;
+        }
 
         $('.comment-input form').submit(function(e){
             e.preventDefault();
@@ -105,7 +112,7 @@ $(function(){
             allTours[tourInfo["name"]] = tourComments;
             localStorage.setItem("tourComments", JSON.stringify(allTours));
 
-            updateCommentList(tourComments, commentDOM);
+            updateCommentList(tourComments, commentDOM, username);
 
             textInput.val('');
             ratingInput.prop("checked", false);
