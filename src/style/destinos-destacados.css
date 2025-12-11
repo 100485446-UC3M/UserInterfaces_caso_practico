@@ -1,0 +1,109 @@
+
+.super-container h2 {
+    font-family: "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+    font-size: 2.2rem;
+    margin: 20px 0 10px 0;
+    margin-bottom: 20px;
+}
+
+ .banner {
+    background-image: url('../images/banner-dest.jpg'); 
+    background-size: cover;      /* cubre todo el contenedor */
+    background-position: center; 
+    width:90%;
+    padding: 20px;               
+    display: flex;               /* para centrar contenido */
+    align-items: center;         
+    justify-content: center;     
+    color: white;                       
+    border-bottom: 2px solid #b9b9b9;
+    border-radius: 10px;     
+}
+
+.banner h1{
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 10px 10px;
+    color: white;               
+    font-weight: bold;
+    font-family: "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: rgba(99, 92, 92, 0.7); /* fondo semitransparente */
+    border-radius: 10px;
+}
+
+.carousel { 
+    width: 100%;
+    height: 400px;   
+    display: flex;             
+    align-items: center;         
+    justify-content: center;                
+    font-size: 1.5rem;                 
+    margin-top: 10px;
+    position: relative;
+}
+
+.carousel-items {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.pack {
+    border: 1px solid #ccc;
+    padding: 30px 30px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.pack .pack-text{
+    background: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+    font-family: "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding: 20px 20px;
+    border-radius: 6px;
+}
+
+.pack .btn {
+    display: inline-block;  /* Para modificar el alto y ancho*/
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.carousel button.prev:hover,
+.carousel button.next:hover{
+    cursor: pointer;  /* convierte el cursor en mano */
+    background: rgba(0, 0, 0, 0.6); 
+}
+
+.carousel button.prev,
+.carousel button.next {
+  font-size: 2.5rem;     /* aumenta el tamaño de las flechas */
+  background: rgba(0,0,0,0.3); /* fondo semi-transparente */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel button.prev:hover,
+.carousel button.next:hover {
+    cursor: pointer;  /* convierte el cursor en mano */
+    background: rgba(0, 0, 0, 0.6); 
+}
+
+.carousel button.prev {
+  left: 10px;
+}
+.carousel button.next {
+  right: 10px;
+}

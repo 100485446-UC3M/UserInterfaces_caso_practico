@@ -7,7 +7,9 @@
     <title>Unbounded</title>
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/completa_tu_viaje.css">
+    <link rel="stylesheet" href="style/distribución_base.css">
+    <link rel="stylesheet" href="style/destinos-destacados.css">
+    <script src="scripts/profile-container.js"></script>
     <meta charset="UTF-8">
 </head>
 
@@ -43,67 +45,35 @@
         </div>
     </header>
 
-    <div class="main-container">
+    <div class="super-container">
         <div class="banner">
             <h1>Completa tu Viaje</h1>
         </div>
-        <h2>Recomendaciones para Vuelos</h2>
-        <div class="recomendaciones">
-            <div class="recomendacion">
-                <a href="https://www.skyscanner.es/"><img src="images/flight1.png" alt="Vuelo 1"></a>
-                <h3>SkyScanner</h3>
+        <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <div class="carousel-items">
+                <div class="pack" data-image="images/logo.jpg">
+                    <div class="pack-text">
+                        <h2>Continente</h2>
+                        <h3>País</h3>
+                        <h4>Ciudad</h4>
+                        <p>Descripción breve del destino destacado</p>
+                    </div>
+                </div>
+                <div class="pack" data-image="images/logo.jpg">
+                    <div class="pack-text">
+                        <h2>Continente</h2>
+                        <h3>País</h3>
+                        <h4>Ciudad</h4>
+                        <p>Descripción breve del destino destacado</p>
+                    </div>
+                </div>
             </div>
-            <div class="recomendacion">
-                <a href="https://www.omio.es/"><img src="images/flight2.png" alt="Vuelo 2"></a>
-                <h3>Omio</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://www.trabber.es/"><img src="images/flight3.png" alt="Vuelo 3"></a>
-                <h3>Trabber</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://www.kayak.es/flights"><img src="images/flight4.png" alt="Vuelo 4"></a>
-                <h3>Kayak</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://www.liligo.es/"><img src="images/flight5.jpeg" alt="Vuelo 5"></a>
-                <h3>Liligo</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://www.edreams.es/"><img src="images/flight6.webp" alt="Vuelo 6"></a>
-                <h3>Edreams</h3>
-            </div>
-        </div>
-
-        <h2>Recomendaciones para Alojamiento</h2>
-                <div class="recomendaciones">
-            <div class="recomendacion">
-                <a href="https://www.booking.com/index.es.html"><img src="images/housing1.png" alt="Housing 1"></a>
-                <h3>Booking</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://www.trivago.es/"><img src="images/housing2.avif" alt="Housing 2"></a>
-                <h3>Trivago</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://www.airbnb.es/"><img src="images/housing3.webp" alt="Housing 3"></a>
-                <h3>Airbnb</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://es.hoteles.com/?locale=es_ES&pos=HCOM_ES&siteid=300000008"><img src="images/housing4.png" alt="Housing 4"></a>
-                <h3>Hoteles</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://www.agoda.com/es-es/?cid=1844104&ds=RRcxhXitZX9svv2T"><img src="images/housing5.png" alt="Housing 5"></a>
-                <h3>Agoda</h3>
-            </div>
-            <div class="recomendacion">
-                <a href="https://destinia.com/en/"><img src="images/housing6.png" alt="Housing 6"></a>
-                <h3>Destinia</h3>
-            </div>
+            <button class="next">&#10095;</button>
         </div>
     </div>
-    
+
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Unbounded. Todos los derechos reservados.</p>
