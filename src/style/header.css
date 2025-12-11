@@ -1,30 +1,29 @@
 .logo {    
     display: block;
     margin: 20px auto;    
-    width: 350px; 
-    border: 3px solid #2d4232;
+    width: 150px; 
+    border: 2px solid #2d4232;
+    border-radius: 50%;
 
 }
 
 .menu_and_extras {
-    position: relative;
-    width: 100%;
     display: flex;
+    margin: 0 auto;
     justify-content: center; /* centra el menú */
+    align-items: center; 
     margin-bottom: 30px;
-    gap:10px;            
+    gap:80px; 
+    background-color: #f8f4e8;    
+    padding: 20px 40px;              
+    width: 80%;                   /* ancho del rectángulo */
+    border-radius: 10px;          
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);           
 }
 
-.menu {
-    display: flex;
-    justify-content: center;  
-    align-items: center; 
+.menu { 
+    display:flex;
     gap: 40px;                    
-    background-color: #f8f4e8;    
-    padding: 20px 20px;              
-    width: 70%;                   /* ancho del rectángulo */
-    border-radius: 10px;          
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 /* Estilo de los enlaces */
@@ -32,12 +31,14 @@
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    font-size:1.15rem;
     font-family: 'Montserrat', sans-serif;
 }
 
 .iconos {
     display: flex;
     gap: 30px;      /* espacio entre imágenes */
+    align-items: center; 
 }
 
 .icono {
@@ -52,7 +53,27 @@
     border-radius: 8px;
 }
 
+.icono .perfil-img {
+    border-radius: 50%;   
+}
+
 .icono p {
     margin-top: 5px;
     font-size: 0.9rem;
+    font-family: "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+}
+
+.perfil-links {
+    display: flex;
+    gap: 20px;
+    font-family: "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
+}
+
+.perfil-link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.perfil-link:hover {
+    text-decoration: underline;
 }

@@ -21,16 +21,24 @@
     background-size: cover;
     background-position: center;
     color: white;               
-    padding: 20px;
+    padding: 30px;
+    justify-content: center;
+    border-radius: 5px;
 }
 
 .Elementos{
     background: rgba(0,0,0,0.5); /* fondo semitransparente */
     display: flex;             
     flex-direction: column;
-    max-width: 80%;                
     border-radius: 8px; 
-    padding: 30px;
+    padding: 20px 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.Elementos p{
+    display: flex;             
+    align-items: center;
 }
 
 .Títulos {
@@ -39,7 +47,7 @@
 }
 .Botón-Búsqueda {
     display: inline-block;  /* Se ajusta al contenido */
-    align-self: flex-start; /* Evita que flex lo estire al ancho completo */
+    align-self: center; /* Evita que flex lo estire al ancho completo */
     padding: 20px 20px;
     background-color: #0077cc;
     color: white;
@@ -63,8 +71,9 @@
     background-size: cover;
     background-position: center;
     color: white;               
-    padding: 15px;
+    padding: 30px;
     align-items: center;
+    border-radius: 8px;
 }
 
 .Descubre-por-tu-Cuenta{
@@ -74,18 +83,18 @@
     background-size: cover;
     background-position: center;
     color: white;               
-    padding: 15px;
+    padding: 30px;
     align-items: center;
+    border-radius: 8px;
 }
 
 .Itinerarios{
-    display: flex;             
+    display: flex;      
+    justify-content: center;      
     padding: 15px 20px;
     font-size: 2rem;
     gap: 150px;
+    text-align: center;
 }
 
-.Itinerarios .Botón-Búsqueda {
-    display: flex;
-    align-self: center;
-}
+
