@@ -42,7 +42,7 @@ $(function(){
             comments_container.empty();
             for(let i = 0; user_comments.length; i++){
                 const comment = commentDOM.clone();
-                comment.attr("href", user_comments[i][1]);
+                comment.attr("href", user_comments[i][1] + "&username=" + encodeURIComponent(username));
                 comment.children(".top-row").children(".username").text(user_comments[i][0]["username"]);
                 comment.children(".top-row").children(".date").text(user_comments[i][0]["date"]);
                 comment.children(".bottom-row").children("img").attr("src", user_comments[i][0]["image"]);
