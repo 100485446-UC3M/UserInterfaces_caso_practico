@@ -77,6 +77,17 @@
     max-height: 800px
 }
 
+#dynamic-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+a.comment {
+    text-decoration: none;
+    color: black;
+}
+
 .comment { 
     display: grid;
     grid-template-rows: 1fr 1fr;
