@@ -48,8 +48,9 @@ $(function(){
                 comment.children(".bottom-row").children("img").attr("src", user_comments[i][0]["image"]);
                 comment.children(".bottom-row").children("p").text(user_comments[i][0]["text"]);
 
-                const rating = user_comments[i]["rating"];
+                const rating = user_comments[i][0]["rating"];
                 const stars = comment.children(".top-row").children(".stars");
+                stars.empty();
                 for (let j = 0; j < rating; j++){
                     stars.append('<span class="fa fa-star gold"></span> ');
                 }
