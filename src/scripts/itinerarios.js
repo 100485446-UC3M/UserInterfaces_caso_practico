@@ -19,7 +19,7 @@ function updateStars(stars, comments){
     }
 }
 
-function updateSearchResults(data, experience_grid, experienceDOM, username){
+async function updateSearchResults(data, experience_grid, experienceDOM, username){
     const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");
     const allDiscovers = JSON.parse(localStorage.getItem("discoverComments") ?? "{}");
 
@@ -30,7 +30,15 @@ function updateSearchResults(data, experience_grid, experienceDOM, username){
         const exp = experienceDOM.clone();
         const card = exp.children(".experience-card");
 
-        let link = "tour-info.html?tour=" + encodeURIComponent(i);
+        let link = "";
+        if(isTour){
+            link = "tour-info.html?tour=" + encodeURIComponent(i);
+        } else {
+            await $.getJSON("data/discover.json", function(discovers){
+                const index = discovers.findIndex((x) => data[i]["name"] === x["name"])
+                link = "discover-info.html?discover=" + encodeURIComponent(index);
+            });
+        }
         if(username) link += "&username=" + encodeURIComponent(username);
         card.children("a").attr("href", link);
         card.children("a").children("img").attr("src", data[i]["image"]);
