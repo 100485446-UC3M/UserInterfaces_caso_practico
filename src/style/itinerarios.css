@@ -34,7 +34,7 @@
 
 .Dia-Actividad {
     display: grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: 1fr 9fr;
     gap: 50px;
     padding: 10px
 }
@@ -44,7 +44,7 @@
     font-family:  "Trip Sans VF","Trip Sans", "Arial", "sans-serif";
     font-size: 1.6rem;
     align-items: center;
-    justify-self: center;
+    justify-self: right;
 }
 
 .Actividad {

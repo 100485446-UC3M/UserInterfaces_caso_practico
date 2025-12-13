@@ -90,6 +90,7 @@ $(function(){
                     "birthday": birthday,
                     "city": city,
                     "password": password,
+                    "itinerary": [],
                     "image": fr.result
                 }));
                 window.location.href = "inicio.html?username=" + encodeURIComponent(login);

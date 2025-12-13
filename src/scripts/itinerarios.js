@@ -1,5 +1,69 @@
 // requiere de search.js
 
+let activities = [];
+
+function saveActivities(username){
+    const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
+    userInfo["itinerary"] = activities;
+    localStorage.setItem(username, JSON.stringify(userInfo));
+}
+
+function addActivity(isTour, data_index, activityDOM, username){
+    activities.push([isTour, data_index]);
+    if(username) saveActivities(username);
+    updateActivities(activityDOM, username);
+}
+
+function removeActivity(activity_index, activityDOM, username){
+    activities = activities.filter((val, index) => index !== activity_index);
+    if(username) saveActivities(username);
+    updateActivities(activityDOM, username);
+}
+
+function updateActivities(activityDOM, username){
+    const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");
+    const allDiscovers = JSON.parse(localStorage.getItem("discoverComments") ?? "{}");
+    $.getJSON("data/tours.json", function(tours){
+        $.getJSON("data/discover.json", function(discovers){
+            const activity_cont = $(".Actividad-container");
+            activity_cont.empty();
+            for(let i = 0; i < activities.length; i++){
+                const act_data = activities[i][0] ? tours[activities[i][1]] : discovers[activities[i][1]];
+                const day_act = activityDOM.clone();
+                day_act.children("h3").text(i + 1);
+                const act = day_act.children(".Actividad");
+                act.children("img").attr("src", act_data["image"]);
+                const details = act.children(".Actividad-Detalles");
+                details.children("#act-title").text(act_data["name"]);
+                details.children("#act-type").text(activities[i][0] ? "Tour" : "Por tu cuenta");
+                if(activities[i][0]){
+                    details.children("#act-price").text(act_data["price"] + "€");
+                    updateStars(details.children(".stars"), allTours[act_data["name"]] ?? []);
+
+                } else {
+                    details.children("#act-price").css("visibility", "hidden");
+                    updateStars(details.children(".stars"), allDiscovers[act_data["name"]] ?? []);
+                }
+                const actions = act.children(".Actividad-Acciones");
+                actions.children(".eliminar-button").on("click", function(){
+                    removeActivity(i, activityDOM, username);
+                });
+                actions.children(".expand-button").on("click", function(){
+                    let link = "";
+                    if(activities[i][0]){
+                        link = "tour-info.html?tour=" + encodeURIComponent(activities[i][1]);
+                    } else {
+                        link = "discover-info.html?discover=" + encodeURIComponent(activities[i][1]);
+                    }
+                    if(username) link += "&username=" + encodeURIComponent(username);
+                    window.location.href = link;
+                });
+                activity_cont.append(day_act);
+            }
+        });
+    });
+}
+
 function updateStars(stars, comments){
     stars.empty();
     let rating = 0;
@@ -19,7 +83,7 @@ function updateStars(stars, comments){
     }
 }
 
-async function updateSearchResults(data, experience_grid, experienceDOM, username){
+async function updateSearchResults(data, experience_grid, experienceDOM, activityDOM, username){
     const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");
     const allDiscovers = JSON.parse(localStorage.getItem("discoverComments") ?? "{}");
 
@@ -31,11 +95,13 @@ async function updateSearchResults(data, experience_grid, experienceDOM, usernam
         const card = exp.children(".experience-card");
 
         let link = "";
+        let index = 0;
         if(isTour){
-            link = "tour-info.html?tour=" + encodeURIComponent(i);
+            index = i;
+            link = "tour-info.html?tour=" + encodeURIComponent(index);
         } else {
             await $.getJSON("data/discover.json", function(discovers){
-                const index = discovers.findIndex((x) => data[i]["name"] === x["name"])
+                index = discovers.findIndex((x) => data[i]["name"] === x["name"])
                 link = "discover-info.html?discover=" + encodeURIComponent(index);
             });
         }
@@ -51,6 +117,12 @@ async function updateSearchResults(data, experience_grid, experienceDOM, usernam
         } else {
             exp.children("h3").text("Por tu cuenta");
         }
+
+        exp.children("button").on("click", function(){
+
+            addActivity(isTour, index, activityDOM, username);
+        });
+
         experience_grid.append(exp);
     }
     for (var i = i; i < 6; i++){
@@ -65,7 +137,14 @@ $(function(){
     // si se pasa un username se significa que está loggeado
     const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const username = params.get("username");
+    activities = JSON.parse(localStorage.getItem(username) ?? "{}")["itinerary"] ?? [];
 
+    //Itinerario
+    const activityDOM = $(".Dia-Actividad").clone();
+    updateActivities(activityDOM, username);
+
+
+    // Busqueda
     var toursData = []
     var discoversData = []
     const search_bar = $(".search-bar");
@@ -76,12 +155,12 @@ $(function(){
         $.getJSON("data/discover.json", function(discovers){
             discoversData = discovers;
             const results = searchName(toursData.concat(discoversData), search_bar.children("input").val().trim());
-            updateSearchResults(results, exp_grid, exp, username);
+            updateSearchResults(results, exp_grid, exp, activityDOM, username);
 
             search_bar.children("input[type='text']").keyup(function(){
                 const results = searchName(toursData.concat(discoversData), search_bar.children("input").val().trim());
 
-                updateSearchResults(results, exp_grid, exp, username);
+                updateSearchResults(results, exp_grid, exp, activityDOM, username);
             })
         });
     });
