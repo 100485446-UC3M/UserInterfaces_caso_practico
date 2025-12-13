@@ -228,8 +228,8 @@
 }
 
 .adjustable {
-    overflow-y: auto;    /* muestra scroll solo en Y */
-    max-height: 880px
+    /*overflow-y: auto;    /* muestra scroll solo en Y */
+    height: 100vh;
 }
 
 .itinerarios-grid {

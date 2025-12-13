@@ -1,5 +1,4 @@
 function updateTourStars(stars, tourComments){
-    console.log(stars);
     stars.empty();
     let rating = 0;
     for (var i = 0; i < tourComments.length; i++){

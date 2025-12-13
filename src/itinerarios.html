@@ -4,6 +4,8 @@
 <head>
     <script src="scripts/jquery-3.7.1.min.js"></script>
     <script src="scripts/user-icon.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/itinerarios.js"></script>
     <title>Unbounded</title>
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
@@ -84,13 +86,11 @@
 
                 <div class="añadir-actividades">
                     <h2>Añadir Jornada</h2>
-                    <form action="/buscar" method="get" class="Buscador">
-                        <div class="search-bar">
-                            <input type="text" placeholder="Buscar...">
-                            <button class="btn-filters">⚙️</button>
-                        </div>
-                    </form>
-                    <h3>Recomendaciones</h3>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar...">
+                        <button class="btn-filters">⚙️</button>
+                    </div>
+                    <h3 id="recomendaciones-text"></h3>
                     <div class="experience-grid">
                         <div class="experience">
                             <div class="experience-card">
