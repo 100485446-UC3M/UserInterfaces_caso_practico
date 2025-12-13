@@ -227,10 +227,10 @@
     background-color: #00796b;
 }
 
-.adjustable {
+/*.adjustable {*/
     /*overflow-y: auto;    /* muestra scroll solo en Y */
-    height: 100vh;
-}
+    /*height: 100vh;
+}*/
 
 .itinerarios-grid {
     padding: 20px;
