@@ -6,7 +6,7 @@ function updateStars(stars, comments){
     for (var i = 0; i < comments.length; i++){
         rating = rating + comments[i]["rating"];
     }
-    if (rating !== 0){
+    if (comments.length !== 0){
         rating = rating / comments.length;
         rating = Math.round(rating);
     }
