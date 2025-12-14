@@ -25,7 +25,7 @@ function updateRecommendGrid(filteredData, allData, allTours, username){
         const card = experience.children(".experience-card");
 
         const index = allData.findIndex((x) => tour["name"] === x["name"])
-        let link = "tour-info.html?tour=" + encodeURIComponent(index); //
+        let link = "tour-info.html?tour=" + encodeURIComponent(index);
         if(username) link += "&username=" + encodeURIComponent(username);
         card.children("a").attr("href", link);
         card.children("a").children("img").attr("src", tour["image"]);
