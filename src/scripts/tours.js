@@ -17,6 +17,30 @@ function updateTourStars(stars, tourComments){
     }
 }
 
+function updateRecommendGrid(data, allTours, username){
+    const children = $("#recommend-grid").children(".experience");
+    for(var i = 0; i < children.length && i < data.length; i++){
+        const experience = children.eq(i);
+        const tour = data[i];
+        const card = experience.children(".experience-card");
+
+        let link = "tour-info.html?tour=" + encodeURIComponent(i); //
+        if(username) link += "&username=" + encodeURIComponent(username);
+        card.children("a").attr("href", link);
+        card.children("a").children("img").attr("src", tour["image"]);
+        card.children("h3").text(tour["name"]);
+
+        const comments = allTours[tour["name"]] ?? [];
+        updateTourStars(experience.children(".stars"), comments);
+
+        experience.children("h3").text(" " + tour["price"] + "€");
+    }
+    for(var i = i; i < children.length; i++){
+        const experience = children.eq(i);
+        experience.css("visibility", "hidden");
+    }
+}
+
 $(function(){
     // se espera un username (string, opcional)
     // si se pasa un username se significa que está loggeado
@@ -25,22 +49,23 @@ $(function(){
     const username = params.get("username");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
     $.getJSON("data/tours.json", function(data){
-        const children = $("#explore-grid").children(".experience");
-        for(let i = 0; i < children.length; i++){
-            const experience = children.eq(i);
-            const tour = data[i];
-            const card = experience.children(".experience-card");
+        updateRecommendGrid(data, allTours, username);
 
-            let link = "tour-info.html?tour=" + encodeURIComponent(i);
-            if(username) link += "&username=" + encodeURIComponent(username);
-            card.children("a").attr("href", link);
-            card.children("img").attr("src", tour["image"]);
-            card.children("h3").text(tour["name"]);
-
-            const comments = allTours[tour["name"]] ?? [];
-            updateTourStars(experience.children(".stars"), comments);
-
-            experience.children("h3").text(" " + tour["price"] + "€");
-        }
+        const left_container = $(".left-container");
+        const no_search_results = $("#no-search-results").clone();
+        const search_text = $(".search-bar input[type='text']");
+        const recommend_grid = $("#recommend-grid").clone();
+        recommend_grid.append($(".experience").clone());
+        search_text.keyup(function(){
+            if(search_text.val().trim() === ""){
+                $("#no-search-results").remove();
+                left_container.append(no_search_results.clone());
+            } else {
+                const results = searchName(data, search_text.val().trim());
+                $("#no-search-results").empty();
+                $("#no-search-results").append(recommend_grid.clone());
+                updateRecommendGrid(results, allTours, username);
+            }
+        });
     });
 });

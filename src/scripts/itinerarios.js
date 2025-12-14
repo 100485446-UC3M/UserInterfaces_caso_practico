@@ -161,7 +161,7 @@ $(function(){
                 const results = searchName(toursData.concat(discoversData), search_bar.children("input").val().trim());
 
                 updateSearchResults(results, exp_grid, exp, activityDOM, username);
-            })
+            });
         });
     });
 });
