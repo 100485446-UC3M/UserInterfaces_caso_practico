@@ -17,14 +17,15 @@ function updateTourStars(stars, tourComments){
     }
 }
 
-function updateRecommendGrid(data, allTours, username){
+function updateRecommendGrid(filteredData, allData, allTours, username){
     const children = $("#recommend-grid").children(".experience");
-    for(var i = 0; i < children.length && i < data.length; i++){
+    for(var i = 0; i < children.length && i < filteredData.length; i++){
         const experience = children.eq(i);
-        const tour = data[i];
+        const tour = filteredData[i];
         const card = experience.children(".experience-card");
 
-        let link = "tour-info.html?tour=" + encodeURIComponent(i); //
+        const index = allData.findIndex((x) => tour["name"] === x["name"])
+        let link = "tour-info.html?tour=" + encodeURIComponent(index); //
         if(username) link += "&username=" + encodeURIComponent(username);
         card.children("a").attr("href", link);
         card.children("a").children("img").attr("src", tour["image"]);
@@ -49,7 +50,7 @@ $(function(){
     const username = params.get("username");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
     $.getJSON("data/tours.json", function(data){
-        updateRecommendGrid(data, allTours, username);
+        updateRecommendGrid(data, data, allTours, username);
 
         const left_container = $(".left-container");
         const no_search_results = $("#no-search-results").clone();
@@ -64,7 +65,7 @@ $(function(){
                 const results = searchName(data, search_text.val().trim());
                 $("#no-search-results").empty();
                 $("#no-search-results").append(recommend_grid.clone());
-                updateRecommendGrid(results, allTours, username);
+                updateRecommendGrid(results, data, allTours, username);
             }
         });
     });
