@@ -12,3 +12,16 @@ $(function(){
         $(this).attr("href", link);
     });
 });
+$(document).ready(function () {
+    $(".menu-toggle").click(function () {
+        $(".menu").toggleClass("active");
+    });
+
+     $(".menu-close").click(function () {
+        $(".menu").removeClass("active");
+    });
+
+    $(".menu a").click(function () {
+        $(".menu").removeClass("active");
+    });
+});

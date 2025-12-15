@@ -32,8 +32,8 @@
 }
 
 .carousel { 
-    width: 100%;
-    height: 400px;   
+    overflow: hidden;
+    width:90%;
     display: flex;             
     align-items: center;         
     justify-content: center;                
@@ -111,4 +111,20 @@
 }
 .carousel button.next {
   right: 10px;
+}
+
+
+@media (max-width: 750px) {
+    .carousel {
+    overflow: hidden;
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.pack {
+    min-width: 100%;
+}
 }

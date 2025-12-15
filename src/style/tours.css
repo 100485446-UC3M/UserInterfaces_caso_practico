@@ -167,3 +167,35 @@
     align-items: center;
     gap: 5px; /* Espacio entre estrellas */
 }
+
+
+@media (max-width: 750px) {
+
+    .left-container {
+        grid-template-rows: auto;
+    }
+
+    .bottom-left {
+        grid-template-columns: 2fr;
+    }
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .left-container {
+        grid-template-rows: auto;
+    }
+
+    .bottom-left {
+        grid-template-columns: 1fr;
+    }
+    .experience-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+}

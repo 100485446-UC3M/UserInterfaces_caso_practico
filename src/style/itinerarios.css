@@ -273,3 +273,33 @@
     border-radius: 8px;
 }
 
+
+@media (max-width: 750px) {
+
+    .itinerarios {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .itinerarios {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr ;
+        grid-template-rows: auto auto auto;
+    }
+
+}
+

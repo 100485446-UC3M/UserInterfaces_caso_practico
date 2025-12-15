@@ -87,3 +87,56 @@
 .perfil-link:hover {
     text-decoration: underline;
 }
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-close {
+    display: none;
+    align-self: flex-end;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+
+    .menu_and_extras {
+    justify-content: center;
+    gap: 20px;
+    }
+
+    /* Ocultamos menú normal */
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #f8f4e8;
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 100;
+    }
+
+    /* Cuando esté activo */
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    .menu-close {
+        display: flex;
+    }
+}
