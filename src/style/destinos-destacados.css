@@ -50,17 +50,22 @@
 }
 
 .pack {
+    background-size: cover;
+    background-position: center;
     border: 1px solid #ccc;
     padding: 30px 30px;
     text-align: center;
     border-radius: 6px;
+    flex: 1;
 }
 
 .pack .pack-text{
+    color: white;
     background: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
     font-family: "system-ui", "Segoe UI", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
     padding: 20px 20px;
     border-radius: 6px;
+    font-size: large;
 }
 
 .pack .btn {
