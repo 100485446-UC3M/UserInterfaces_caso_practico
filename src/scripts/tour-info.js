@@ -70,7 +70,9 @@ $(function(){
 
         // Botón comprar → redirige a una página
         $(".buy-button").on("click", function() {
-        window.location.href = `compra.html?tour=${tourInfo["name"]}`;
+            let link = 'compra.html?tour=' + encodeURIComponent(params.get("tour"));
+            if(username) link += "&username=" + encodeURIComponent(username);
+            window.location.href = link;
         });
 
         if(!username) {
