@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style/distribución_base.css">
     <link rel="stylesheet" href="style/stars.css">
     <link rel="stylesheet" href="style/descubre_por_tu_cuenta.css">
+    <link rel="stylesheet" href="style/ayuda.css">
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
@@ -17,6 +18,7 @@
     <script src="scripts/user-icon.js"></script>
     <script src="scripts/search.js"></script>
     <script src="scripts/discover.js"></script>
+    <script src="scripts/ayuda.js"></script>
 
 </head>
 <body>
@@ -34,7 +36,7 @@
             </nav>
             <div class="iconos">
                 <div class="icono">
-                    <a href="#"><img src="images/help.png" alt="Ayuda"></a>
+                    <button type="button" id="ayuda-icon"><img src="images/help.png" alt="Ayuda"></button>
                     <p>Ayuda</p>
                 </div>
                 <div class="icono">
@@ -59,6 +61,7 @@
             <div class="search-bar">
                 <input type="text" placeholder="Buscar...">
                 <button class="btn-filters">⚙️</button>
+                <p class="tooltip">Permite buscar entre los planes disponibles</p>
             </div>
 
             <h2>Guías Recomendadas</h2>

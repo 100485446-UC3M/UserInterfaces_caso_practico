@@ -47,6 +47,16 @@
     align-items: center; /* nombre debajo de la imagen */
 }
 
+.icono button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .icono img {
     width: 30px;
     height: 30px;

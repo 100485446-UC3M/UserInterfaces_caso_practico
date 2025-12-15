@@ -144,6 +144,13 @@ $(function(){
     const activityDOM = $(".Dia-Actividad").clone();
     updateActivities(activityDOM, username);
 
+    //Itinerarios populares
+    $(".itinerarios-populares a").each(function(){
+        let link = $(this).attr("href");
+        if(username) link += "?username=" + encodeURIComponent(username);
+        $(this).attr("href", link);
+    });
+
 
     // Busqueda
     var toursData = []

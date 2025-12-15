@@ -7,12 +7,14 @@
     <script src="scripts/user-icon.js"></script>
     <script src="scripts/search.js"></script>
     <script src="scripts/itinerarios.js"></script>
+    <script src="scripts/ayuda.js"></script>
     <title>Unbounded</title>
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/distribución_base.css">
     <link rel="stylesheet" href="style/itinerarios.css">
     <link rel="stylesheet" href="style/stars.css">
+    <link rel="stylesheet" href="style/ayuda.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
 </head>
@@ -32,7 +34,7 @@
             </nav>
             <div class="iconos">
                 <div class="icono">
-                    <a href="#"><img src="images/help.png" alt="Ayuda"></a>
+                    <button type="button" id="ayuda-icon"><img src="images/help.png" alt="Ayuda"></button>
                     <p>Ayuda</p>
                 </div>
                 <div class="icono">
@@ -53,6 +55,8 @@
 
                 <div class="tu-itinerario">
                     <h2>Crea tu Itinerario</h2>
+                    
+                <p class="tooltip">Crea tu propio itinerario. Usa los botones "Añadir al itinerario" de más abajo para añadir una actividad para una jornada. Usa el boton eliminar para eliminar la actividad del itinerario.</p>
                     <div class="labels">
                         <h2>Día</h2>
                         <h2>Actividad</h2>
@@ -88,6 +92,7 @@
                     <div class="search-bar">
                         <input type="text" placeholder="Buscar...">
                         <button class="btn-filters">⚙️</button>
+                        <p class="tooltip">Permite buscar entre las actividades disponibles</p>
                     </div>
                     <h3 id="recomendaciones-text"></h3>
                     <div class="experience-grid">
