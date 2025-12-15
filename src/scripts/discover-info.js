@@ -60,6 +60,7 @@ function updateCommentList(discoverComments, commentDOM, isLoggedIn) {
         bottomRow.children("p").text(discoverComments[i]["text"]);
         comments.append(comm);
     }
+    if(discoverComments.length === 0) comments.append('<div class="comment">No hay comentarios publicados</div>')
     if(isLoggedIn) comments.append($('.comment-input'));
     updateStars(discoverComments);
 }
