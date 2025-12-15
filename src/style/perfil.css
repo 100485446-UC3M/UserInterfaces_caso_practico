@@ -114,3 +114,15 @@ a.comment {
     float: left;
     margin-left: 20px;
 }
+
+
+@media (max-width: 750px) {
+
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+
+
+}

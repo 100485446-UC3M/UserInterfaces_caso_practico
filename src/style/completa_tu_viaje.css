@@ -58,3 +58,26 @@
     border-radius: 10px;
 
 }
+
+
+@media (max-width: 750px) {
+    .main-container {
+        text-align: center;
+}
+    .recomendaciones {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .recomendaciones {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+}
+

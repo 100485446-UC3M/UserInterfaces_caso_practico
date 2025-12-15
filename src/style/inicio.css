@@ -98,3 +98,29 @@
 }
 
 
+
+@media (max-width: 600px) {
+
+    .left-container {
+        grid-template-rows: auto;
+    }
+
+    .bottom-left {
+        grid-template-columns: 1fr;
+    }
+
+    .Itinerarios {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1.5rem;
+    }
+
+    .left-container p {
+        font-size: 1.2rem;
+    }
+
+    .Botón-Búsqueda {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}

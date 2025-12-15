@@ -10,6 +10,7 @@ function updateCarousel(cities, index){
     });
 }
 
+
 $(function(){
     let index = 0;
 
