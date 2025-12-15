@@ -44,3 +44,17 @@
     float: left;
     margin-left: 20px;
 }
+
+.buy-button {
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: 20%;
+}
+
+.main-left .image-foot {
+    display: flex;
+}
+
+.image-foot div {
+    min-width: 65%;
+}

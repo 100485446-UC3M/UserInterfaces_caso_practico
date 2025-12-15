@@ -55,6 +55,11 @@ $(function(){
     const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const username = params.get("username");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
+
+    let link = $(".super-container #return").attr("href");
+    if(username) link += "?username=" + encodeURIComponent(username);
+    $(".super-container #return").attr("href", link);
+
     $.getJSON("data/tours.json", function(data){
         //todo lo que necesite tourInfo debe estar dentro de esta funcion
         const tourInfo = data[params.get("tour")];
