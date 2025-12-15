@@ -97,11 +97,13 @@ async function updateSearchResults(data, experience_grid, experienceDOM, activit
         let link = "";
         let index = 0;
         if(isTour){
-            index = i;
-            link = "tour-info.html?tour=" + encodeURIComponent(index);
+            await $.getJSON("data/tours.json", function(tours){
+                index = tours.findIndex((x) => data[i]["name"] === x["name"]);
+                link = "tour-info.html?discover=" + encodeURIComponent(index);
+            });
         } else {
             await $.getJSON("data/discover.json", function(discovers){
-                index = discovers.findIndex((x) => data[i]["name"] === x["name"])
+                index = discovers.findIndex((x) => data[i]["name"] === x["name"]);
                 link = "discover-info.html?discover=" + encodeURIComponent(index);
             });
         }
@@ -118,8 +120,7 @@ async function updateSearchResults(data, experience_grid, experienceDOM, activit
             exp.children("h3").text("Por tu cuenta");
         }
 
-        exp.children("button").on("click", function(){
-
+        exp.children("button").click(function(){
             addActivity(isTour, index, activityDOM, username);
         });
 
