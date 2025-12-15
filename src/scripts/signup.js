@@ -64,7 +64,7 @@ $(function(){
         }
         
         if (!(/[A-Z]/.test(password) && /[a-z]/.test(password) && /[!@#$%^&*]/.test(password)
-            && /[0-9].*[0-9]/.test(password) && password.length === 8)){ 
+            && /[0-9].*[0-9]/.test(password) && password.length >= 8)){ 
             alert("La contraseña debe tener 8 caracteres, 2 números, 1 carácter especial, 1 mayúscula y 1 minúscula.");
             return false;
         }
