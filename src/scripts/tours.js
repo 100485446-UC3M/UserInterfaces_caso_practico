@@ -48,8 +48,9 @@ $(function(){
     const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");
     const username = params.get("username");
+    const lang = params.get("lang");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
-    $.getJSON("data/tours.json", function(data){
+    $.getJSON("data/tours" + (lang ? "-ingles" : "") + ".json", function(data){
         updateRecommendGrid(data, data, allTours, username);
 
         const left_container = $(".left-container");

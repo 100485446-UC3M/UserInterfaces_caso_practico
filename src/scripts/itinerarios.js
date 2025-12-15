@@ -8,23 +8,23 @@ function saveActivities(username){
     localStorage.setItem(username, JSON.stringify(userInfo));
 }
 
-function addActivity(isTour, data_index, activityDOM, username){
+function addActivity(isTour, data_index, activityDOM, username, lang){
     activities.push([isTour, data_index]);
     if(username) saveActivities(username);
-    updateActivities(activityDOM, username);
+    updateActivities(activityDOM, username, lang);
 }
 
-function removeActivity(activity_index, activityDOM, username){
+function removeActivity(activity_index, activityDOM, username, lang){
     activities = activities.filter((val, index) => index !== activity_index);
     if(username) saveActivities(username);
-    updateActivities(activityDOM, username);
+    updateActivities(activityDOM, username, lang);
 }
 
-function updateActivities(activityDOM, username){
+function updateActivities(activityDOM, username, lang){
     const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");
     const allDiscovers = JSON.parse(localStorage.getItem("discoverComments") ?? "{}");
-    $.getJSON("data/tours.json", function(tours){
-        $.getJSON("data/discover.json", function(discovers){
+    $.getJSON("data/tours" + (lang ? "-ingles" : "") + ".json", function(tours){
+        $.getJSON("data/discover" + (lang ? "-ingles" : "") + ".json", function(discovers){
             const activity_cont = $(".Actividad-container");
             activity_cont.empty();
             for(let i = 0; i < activities.length; i++){
@@ -46,7 +46,7 @@ function updateActivities(activityDOM, username){
                 }
                 const actions = act.children(".Actividad-Acciones");
                 actions.children(".eliminar-button").on("click", function(){
-                    removeActivity(i, activityDOM, username);
+                    removeActivity(i, activityDOM, username, lang);
                 });
                 actions.children(".expand-button").on("click", function(){
                     let link = "";
@@ -83,7 +83,7 @@ function updateStars(stars, comments){
     }
 }
 
-async function updateSearchResults(data, experience_grid, experienceDOM, activityDOM, username){
+async function updateSearchResults(data, experience_grid, experienceDOM, activityDOM, username, lang){
     const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");
     const allDiscovers = JSON.parse(localStorage.getItem("discoverComments") ?? "{}");
 
@@ -97,12 +97,12 @@ async function updateSearchResults(data, experience_grid, experienceDOM, activit
         let link = "";
         let index = 0;
         if(isTour){
-            await $.getJSON("data/tours.json", function(tours){
+            await $.getJSON("data/tours" + (lang ? "-ingles" : "") + ".json", function(tours){
                 index = tours.findIndex((x) => data[i]["name"] === x["name"]);
                 link = "tour-info.html?discover=" + encodeURIComponent(index);
             });
         } else {
-            await $.getJSON("data/discover.json", function(discovers){
+            await $.getJSON("data/discover" + (lang ? "-ingles" : "") + ".json", function(discovers){
                 index = discovers.findIndex((x) => data[i]["name"] === x["name"]);
                 link = "discover-info.html?discover=" + encodeURIComponent(index);
             });
@@ -121,7 +121,7 @@ async function updateSearchResults(data, experience_grid, experienceDOM, activit
         }
 
         exp.children("button").click(function(){
-            addActivity(isTour, index, activityDOM, username);
+            addActivity(isTour, index, activityDOM, username, lang);
         });
 
         experience_grid.append(exp);
@@ -138,6 +138,7 @@ $(function(){
     // si se pasa un username se significa que está loggeado
     const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const username = params.get("username");
+    var lang = params.get("lang");
     activities = JSON.parse(localStorage.getItem(username) ?? "{}")["itinerary"] ?? [];
 
     //Itinerario
@@ -158,17 +159,17 @@ $(function(){
     const search_bar = $(".search-bar");
     const exp_grid = $(".experience-grid");
     const exp = exp_grid.children(".experience").first().clone();
-    $.getJSON("data/tours.json", function(tours){
+    $.getJSON("data/tours" + (lang ? "-ingles" : "") + ".json", function(tours){
         toursData = tours;
-        $.getJSON("data/discover.json", function(discovers){
+        $.getJSON("data/discover" + (lang ? "-ingles" : "") + ".json", function(discovers){
             discoversData = discovers;
             const results = searchName(toursData.concat(discoversData), search_bar.children("input").val().trim());
-            updateSearchResults(results, exp_grid, exp, activityDOM, username);
+            updateSearchResults(results, exp_grid, exp, activityDOM, username, lang);
 
             search_bar.children("input[type='text']").keyup(function(){
                 const results = searchName(toursData.concat(discoversData), search_bar.children("input").val().trim());
 
-                updateSearchResults(results, exp_grid, exp, activityDOM, username);
+                updateSearchResults(results, exp_grid, exp, activityDOM, username, lang);
             });
         });
     });

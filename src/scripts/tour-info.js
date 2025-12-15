@@ -54,13 +54,14 @@ $(function(){
     // si se pasa un username se significa que está loggeado
     const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const username = params.get("username");
+    const lang = params.get("lang");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
 
     let link = $(".super-container #return").attr("href");
     if(username) link += "?username=" + encodeURIComponent(username);
     $(".super-container #return").attr("href", link);
 
-    $.getJSON("data/tours.json", function(data){
+    $.getJSON("data/tours" + (lang ? "-ingles" : "") + ".json", function(data){
         //todo lo que necesite tourInfo debe estar dentro de esta funcion
         const tourInfo = data[params.get("tour")];
         const allTours = JSON.parse(localStorage.getItem("tourComments") ?? "{}");

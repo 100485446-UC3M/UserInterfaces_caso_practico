@@ -1,21 +1,3 @@
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION mirar el comentario de abajo
-// ATENCION descomentarlo cuando sea apropiado
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-// ATENCION
-
 function updateStars(discoverComments){
     const stars = $(".main-container .stars");
     stars.empty();
@@ -72,13 +54,14 @@ $(function(){
     // si se pasa un username se significa que está loggeado
     const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const username = params.get("username");
+    const lang = params.get("lang");
     const userInfo = JSON.parse(localStorage.getItem(username) ?? "{}");
 
     let link = $(".super-container #return").attr("href");
     if(username) link += "?username=" + encodeURIComponent(username);
     $(".super-container #return").attr("href", link);
 
-    $.getJSON("data/discover.json", function(data){
+    $.getJSON("data/discover" + (lang ? "-ingles" : "") + ".json", function(data){
         //todo lo que necesite discoverInfo debe estar dentro de esta funcion
         const discoverInfo = data[params.get("discover")];
         const allDiscovers = JSON.parse(localStorage.getItem("discoverComments") ?? "{}")

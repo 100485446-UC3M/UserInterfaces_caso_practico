@@ -47,11 +47,12 @@ $(function(){
     const params = new URLSearchParams(decodeURIComponent(window.location.search));
     const allDiscover = JSON.parse(localStorage.getItem("discoverComments") ?? "{}");
     const username = params.get("username");
+    const lang = params.get("lang");
 
     
     const recommended_text = $(".left-container").children('h2');
     const search_text = $(".search-bar input[type='text']");
-    $.getJSON("data/discover.json", function(data){
+    $.getJSON("data/discover" + (lang ? "-ingles" : "") + ".json", function(data){
         updateGrid(searchName(data, search_text.val().trim()), data, allDiscover, username);
         search_text.keyup(function(){
             recommended_text.css("visibility", search_text.val().trim() === "" ? "visible" : "hidden");
